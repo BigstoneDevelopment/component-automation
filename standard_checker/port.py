@@ -1,5 +1,7 @@
 import enum
 import re
+
+from .standards import Direction
 from .color import Color
 
 
@@ -29,10 +31,13 @@ class Port():
 
 class Ports(list[Port]):
     def __str__(self) -> str:
-        return "[" + ", \{text:\", \",italic:true,color:\"dark_gray\"\}, ".join(str(port) for port in self) + "]"
+        return "[" + ", {text:\", \",italic:true,color:\"dark_gray\"},".join(str(port) for port in self) + "]"
 
     def __repr__(self) -> str:
         return str(self)
+
+    def direction_repr(self, direction: Direction) -> str:
+        return f"[{{text:\"{direction.capitalize()}: \",italic:true,color:\"dark_gray\"}}," + repr(self)[1:]
 
 
 __all__ = ["IO", "Port", "Ports"]
