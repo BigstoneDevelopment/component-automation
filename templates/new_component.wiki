@@ -1,0 +1,17 @@
+PATH: ????????????????????
+---
+title: <structure_display_name>
+layout: default
+---
+
+# <structure_display_name>
+
+<structure_description>
+
+**Author**: <structure_author>
+
+### Ports
+<repeat "x in range(ports.length)" "- <ports[{x}]>
+
+">This file was auto-generated
+_Last updated: <time>_

@@ -48,10 +48,10 @@ class Standard:
 
 STANDARDS: dict[str, Standard] = {}
 
-templates_dir = "automation/templates/"
-if os.path.exists(templates_dir):
-    for filename in os.listdir(templates_dir):
-        file_path = os.path.join(templates_dir, filename)
+standards_dir = os.path.join(os.path.dirname(__file__), "standards")
+if os.path.exists(standards_dir) and os.path.isdir(standards_dir):
+    for filename in os.listdir(standards_dir):
+        file_path = os.path.join(standards_dir, filename)
         if os.path.isfile(file_path):
             with open(file_path, "r") as template_file:
                 STANDARDS[filename] = Standard(json.load(template_file))

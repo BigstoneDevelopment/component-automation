@@ -1,5 +1,6 @@
 
 import re
+import time
 from typing import Literal, Self
 import os
 
@@ -23,6 +24,10 @@ class Template:
             content = content.removeprefix("APPEND:").strip()
         self.PATH = content.splitlines()[0].strip().removeprefix("PATH:").strip()
         self.content = "\n".join(content.splitlines()[1:])
+        self.prereplace()
+
+    def prereplace(self) -> None:
+        self.content = re.sub(r"<time>", lambda _: f"<{time.asctime()}>", self.content)
 
     def __replace__(self, **kwargs: str) -> Self:
         result = self.content
@@ -31,11 +36,8 @@ class Template:
         self.content = result
         return self
 
-    def valid(self) -> list[AllValidComponentsTemplate]:
-        return re.findall(r"<(\w+)>", self.content)
-
     def finished(self) -> bool:
-        return not re.search(r"<\w+>", self.content)
+        return not re.search(r"<.*>", self.content, re.DOTALL)
 
     def save(self) -> None:
         with open(self.PATH, "a" if self.append else "w") as file:
@@ -44,8 +46,8 @@ class Template:
 
 TEMPLATES: dict[str, Template] = {}
 
-templates_dir = "automation/templates/"
-if os.path.exists(templates_dir):
+templates_dir = os.path.join(os.path.dirname(__file__), "templates")
+if os.path.exists(templates_dir) and os.path.isdir(templates_dir):
     for filename in os.listdir(templates_dir):
         file_path = os.path.join(templates_dir, filename)
         if os.path.isfile(file_path):
