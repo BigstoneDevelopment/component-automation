@@ -29,7 +29,7 @@ class Port():
 
 class Ports(list[Port]):
     def __str__(self) -> str:
-        return "[" + ", ".join(str(port) for port in self) + "]"
+        return "[" + ", \{text:\", \",italic:true,color:\"dark_gray\"\}, ".join(str(port) for port in self) + "]"
 
     def __repr__(self) -> str:
         return str(self)
