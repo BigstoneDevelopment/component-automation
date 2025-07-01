@@ -1,14 +1,16 @@
 import enum
 import re
-
-from .standards import Direction
 from .color import Color
+from typing import Literal
 
 
 class IO(enum.Enum):
     I = "input".upper()  # noqa: E741
     O = "output".upper()  # noqa: E741
     B = "bidirectional".upper()  # noqa: E741
+
+
+Direction = Literal["top", "bottom", "north", "south", "west", "east", "side"]
 
 
 class Port():
@@ -40,4 +42,4 @@ class Ports(list[Port]):
         return f"[{{text:\"{direction.capitalize()}: \",italic:true,color:\"dark_gray\"}}," + repr(self)[1:]
 
 
-__all__ = ["IO", "Port", "Ports"]
+__all__ = ["IO", "Port", "Ports", "Direction"]

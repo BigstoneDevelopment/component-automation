@@ -1,12 +1,9 @@
 import os
 import json
 import re
-from typing import Any, Literal, cast
+from typing import Any, cast
 from .color import Color
-from .port import Port
-
-
-Direction = Literal["top", "bottom", "north", "south", "west", "east", "side"]
+from .port import Port, Direction
 
 
 class Standard:
@@ -53,8 +50,8 @@ if os.path.exists(standards_dir) and os.path.isdir(standards_dir):
     for filename in os.listdir(standards_dir):
         file_path = os.path.join(standards_dir, filename)
         if os.path.isfile(file_path):
-            with open(file_path, "r") as template_file:
-                STANDARDS[filename] = Standard(json.load(template_file))
+            with open(file_path, "r", encoding='utf-8') as standard_file:
+                STANDARDS[filename] = Standard(json.load(standard_file))
 
 
 __all__ = ["Standard", "STANDARDS"]
