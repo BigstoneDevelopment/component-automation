@@ -29,10 +29,31 @@ class Template:
     def prereplace(self) -> None:
         self.content = re.sub(r"<time>", lambda _: f"<{time.asctime()}>", self.content)
 
-    def __replace__(self, **kwargs: str) -> Self:
+    def replace(self, **kwargs: str | list[str]) -> Self:
+        if not kwargs:
+            return self
+        repeats: list[tuple[str, str, str]] = re.findall(r"<repeat \"(\w*?) in (.*?)\" \"(.*?)\">", self.content, re.DOTALL)
+        while repeats:
+            for repeat_key, repeater, repeat_value in repeats:
+                try:
+                    iterable = eval(repeater, {}, kwargs)
+                except Exception as e:
+                    raise ValueError(f"Failed to evaluate repeater: {repeater}") from e
+
+                output = ""
+                for item in iterable:
+                    formatted = repeat_value.replace(f"{{{repeat_key}}}", str(item))
+                    output += formatted
+
+                self.content = self.content.replace(f'<repeat "{repeat_key} in {repeater}" "{repeat_value}">', output)
+
+            repeats = re.findall(r"<repeat \"(\w*?) in (.*?)\" \"(.*?)\">", self.content, re.DOTALL)
         result = self.content
         for key, value in kwargs.items():
-            result = result.replace(f"<{key}>", value)
+            result = result.replace(f"<{key}>", value if isinstance(value, str) else ",".join(value))
+            if isinstance(value, list):
+                for i in range(len(value)):
+                    result = result.replace(f"<{key}[{i}]>", value[i])
         self.content = result
         return self
 
@@ -51,7 +72,7 @@ if os.path.exists(templates_dir) and os.path.isdir(templates_dir):
     for filename in os.listdir(templates_dir):
         file_path = os.path.join(templates_dir, filename)
         if os.path.isfile(file_path):
-            with open(file_path, "r") as template_file:
+            with open(file_path, "r", encoding='utf-8') as template_file:
                 content = template_file.read()
                 TEMPLATES[filename] = Template(content)
 

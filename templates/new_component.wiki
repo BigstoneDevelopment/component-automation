@@ -11,7 +11,7 @@ layout: default
 **Author**: <structure_author>
 
 ### Ports
-<repeat "x in range(ports.length)" "- <ports[{x}]>
-
-">This file was auto-generated
+<repeat "x in range(len(ports))" "- <ports[{x}]>
+">
+This file was auto-generated
 _Last updated: <time>_

@@ -1,5 +1,6 @@
 from errno import EACCES
 from standard_checker import load, render
+from template import TEMPLATES
 import sys
 import os
 
@@ -35,3 +36,17 @@ if __name__ == "__main__":
     wiki_path = os.path.join(WIKI_FOLDER, os.path.splitext(os.path.basename(wiki_path))[0])  # Remove the extension
 
     image = render(structure, output_path=wiki_path + ".png")
+
+    exit(6)  # Placeholder because the code is not complete yet
+
+    a = TEMPLATES["new_component.wiki"]
+    a.replace(
+        structure_file_name="example.nbt",
+        structure_display_name="Example Structure",
+        structure_author="Author Name",
+        structure_description="This is an example structure.",
+        ports=["{{text:\"Port1\",italic:true,color:\"red\"}}", "{{text:\"Port2\",italic:true,color:\"blue\"}}"],
+        namespace="example_namespace",
+        model="example_model"
+    )
+    print(a.content)
