@@ -1,8 +1,11 @@
 
+from collections import defaultdict
 import re
 import time
 from typing import Literal, Self
 import os
+
+from translator import Translator
 
 
 AllValidComponentsTemplate = Literal[
@@ -17,6 +20,8 @@ AllValidComponentsTemplate = Literal[
 
 
 class Template:
+    __finished: dict[str, bool] = defaultdict(lambda: False)
+
     def __init__(self, content: str) -> None:
         content = content.strip()
         self.append = content.startswith("APPEND:")
@@ -57,7 +62,15 @@ class Template:
         self.content = result
         return self
 
-    def finished(self) -> bool:
+    def postreplace(self, lang_code: str) -> Self:
+        self.content = Translator().translate(self.content, lang_code)
+        return self
+
+    def finished(self, lang_code: str = "en") -> bool:
+        if self.__finished[lang_code]:
+            return True
+        self.postreplace(lang_code)
+        self.__finished[lang_code] = True
         return not re.search(r"<.*>", self.content, re.DOTALL)
 
     def save(self) -> None:
