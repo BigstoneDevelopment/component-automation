@@ -1,3 +1,8 @@
-☐ Add admin block tests
+☐ Add admin block tests (command blocks, etc.)
 ☐ Add upload
-☐ Add template check
+☐ Add template system (Needs testing)
+☐ Add standard check (redstone don't affect other blocks) => warning if not following the template
+☐ Make the translation system work
+☐ Add good texture import for irregular models
+☐ Add the replace system (all lights to air for example)
+☐ Replace the blocks under ports by the port color (idk if we should do this)
