@@ -1,6 +1,6 @@
-☐ Add admin block tests (command blocks, etc.)
-☐ Add upload
-☐ Add template system (Needs testing)
+☐ Add admin and modded block tests so it's categories differently (command blocks, etc.)
+☐ Add upload for components, image and templates (needs an API endpoint and/or git repo)
+☐ Add template system that auto fills with the correct data (Needs testing)
 ☐ Add standard check (redstone don't affect other blocks) => warning if not following the template
 ☐ Make the translation system work
 ☐ Add good texture import for irregular models
