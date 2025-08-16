@@ -26,6 +26,8 @@ class Standard:
                     raise ValueError("Port position must be a list or tuple of two integers"
                                      " representing position and 1 letter for the type, got"
                                      f" {port['position']}")
+                if port["color"] is None:
+                    port["color"] = Color.NONE.value
                 if not isinstance(port["color"], str):
                     raise ValueError(f"Port color must be a string, got {type(port['color']).__name__}")
                 if not re.match(r"[IOB][A-Z]+(-[A-Z]+)?", port["name"]):

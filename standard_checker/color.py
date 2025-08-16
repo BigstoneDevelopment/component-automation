@@ -2,6 +2,7 @@ import enum
 
 
 class Color(enum.Enum):
+    NONE = "null"
     DARK_GRAY = "dark_gray"
     RED = "red"
     GREEN = "green"
