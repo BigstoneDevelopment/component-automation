@@ -1,0 +1,20 @@
+PATH: ????????????????????
+---
+title: <structure_display_name>
+layout: default
+---
+
+This file is not translated yet.
+Translations have been done automatically.
+
+# <structure_display_name>
+
+<structure_description>
+
+**Author**: <structure_author>
+
+### Ports
+<repeat "x in range(len(ports))" "- <ports[{x}]>
+">
+This file was auto-generated
+_Last updated: <time>_

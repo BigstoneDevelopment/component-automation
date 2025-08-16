@@ -1,8 +1,8 @@
 ☐ Add admin and modded block tests so it's categories differently (command blocks, etc.)
 ☐ Add upload for components, image and templates (needs an API endpoint and/or git repo)
 ☐ Add template system that auto fills with the correct data (Needs testing)
-☐ Add standard check (redstone don't affect other blocks) => warning if not following the template
+☐ Add standard check (redstone don't affect other blocks) => warning if any redstone affects outside
 ☐ Make the translation system work
 ☐ Add good texture import for irregular models
 ☐ Add the replace system (all lights to air for example)
-☐ Replace the blocks under ports by the port color (idk if we should do this)
+✘ Replace the blocks under ports by the port color (idk if we should do this) @cancelled(25-08-16 12:58)
