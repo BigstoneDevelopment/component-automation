@@ -1,83 +1,143 @@
 {
     "top": [
         {
-            "name": "IITEM-HOPPER",
+            "name": "iITEM-HOPPER",
             "position": [[8, 8, "I"], [9, 8, "I"], [8, 9, "I"], [9, 9, "I"]],
-            "color": "gray"
+            "color": null
         },
         {
-            "name": "IITEM-WATER",
+            "name": "iITEM-WATER",
             "position": [[8, 8, "I"], [9, 8, "I"], [8, 9, "I"], [9, 9, "I"]],
-            "color": "gray"
+            "color": null
         }
     ],
     "bottom": [
         {
-            "name": "OITEM-HOPPER",
+            "name": "oITEM-HOPPER",
             "position": [[8, 8, "O"], [9, 8, "O"], [8, 9, "O"], [9, 9, "O"]],
-            "color": "gray"
+            "color": null
         },
         {
-            "name": "OITEM-WATER",
+            "name": "oITEM-WATER",
             "position": [[8, 8, "O"], [9, 8, "O"], [8, 9, "O"], [9, 9, "O"]],
-            "color": "gray"
+            "color": null
         }
     ],
     "side": [
         {
-            "name": "IBIN",
+            "name": "iBIN",
             "position": [[7, 2, "I"]],
             "color": "red"
         },
         {
-            "name": "OBIN",
+            "name": "oBIN",
             "position": [[10, 2, "O"]],
             "color": "red"
         },
         {
-            "name": "IHEX",
+            "name": "iHEX",
             "position": [[5, 2, "I"]],
             "color": "blue"
         },
         {
-            "name": "OHEX",
+            "name": "oHEX",
             "position": [[12, 2, "O"]],
             "color": "blue"
         },
         {
-            "name": "IHEX-STATE",
-            "position": [[5, 2, "I"]],
+            "name": "iHEX-STATE",
+            "position": [[5, 4, "I"]],
             "color": "green"
         },
         {
-            "name": "OHEX-STATE",
-            "position": [[12, 2, "O"]],
+            "name": "oHEX-STATE",
+            "position": [[12, 4, "O"]],
             "color": "green"
         },
         {
-            "name": "IITEM-HOPPER",
+            "name": "iHEX-2",
+            "position": [[7, 6, "I"], [9, 6, "I"]],
+            "color": "yellow"
+        },
+        {
+            "name": "oHEX-2",
+            "position": [[8, 6, "O"], [10, 6, "O"]],
+            "color": "yellow"
+        },
+        {
+            "name": "iBIN-2LR",
+            "position": [[2, 3, "I"], [4, 3, "I"]],
+            "color": "cyan"
+        },
+        {
+            "name": "oBIN-2LR",
+            "position": [[2, 3, "O"], [4, 3, "O"]],
+            "color": "cyan"
+        },
+        {
+            "name": "iBIN-4LR",
+            "position": [[2, 3, "I"], [4, 3, "I"], [6, 3, "I"], [8, 3, "I"]],
+            "color": "cyan"
+        },
+        {
+            "name": "oBIN-4LR",
+            "position": [[2, 3, "O"], [4, 3, "O"], [6, 3, "O"], [8, 3, "O"]],
+            "color": "cyan"
+        },
+        {
+            "name": "iBIN-8LR",
+            "position": [[2, 3, "I"], [4, 3, "I"], [6, 3, "I"], [8, 3, "I"], [10, 3, "I"], [12, 3, "I"], [14, 3, "I"], [16, 3, "I"]],
+            "color": "cyan"
+        },
+        {
+            "name": "oBIN-8LR",
+            "position": [[2, 3, "O"], [4, 3, "O"], [6, 3, "O"], [8, 3, "O"], [10, 3, "O"], [12, 3, "O"], [14, 3, "O"], [16, 3, "O"]],
+            "color": "cyan"
+        },
+        {
+            "name": "iSOUND",
+            "position": [[7, 4, "I"]],
+            "color": "purple"
+        },
+        {
+            "name": "oSOUND",
+            "position": [[10, 4, "O"]],
+            "color": "purple"
+        },
+        {
+            "name": "iRAIL",
+            "position": [[8, 2, "I"]],
+            "color": "brown"
+        },
+        {
+            "name": "oRAIL",
+            "position": [[9, 2, "O"]],
+            "color": "brown"
+        },
+        {
+            "name": "iITEM-HOPPER",
             "position": [[8, 8, "I"], [9, 8, "I"], [8, 9, "I"], [9, 9, "I"]],
-            "color": "gray"
+            "color": null
         },
         {
-            "name": "OITEM-HOPPER",
+            "name": "oITEM-HOPPER",
             "position": [[8, 8, "O"], [9, 8, "O"], [8, 9, "O"], [9, 9, "O"]],
-            "color": "gray"
+            "color": null
         },
         {
-            "name": "BITEM-HOPPER",
+            "name": "bITEM-HOPPER",
             "position": [[8, 8, "I"], [9, 8, "O"], [8, 9, "I"], [9, 9, "O"]],
-            "color": "gray"
+            "color": null
         },
         {
-            "name": "IITEM-WATER",
+            "name": "iITEM-WATER",
             "position": [[8, 8, "I"], [9, 8, "I"], [8, 9, "I"], [9, 9, "I"]],
-            "color": "gray"
+            "color": null
         },
         {
-            "name": "OITEM-WATER",
+            "name": "oITEM-WATER",
             "position": [[8, 8, "O"], [9, 8, "O"], [8, 9, "O"], [9, 9, "O"]],
-            "color": "gray"
+            "color": null
         }
     ]
 }
